@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="center">
+    <form [formGroup]="loginForm" (ngSubmit)="logindata(loginForm)">
+
+      <h1>Login</h1>
+
+      <div class="txt_field" *ngFor="let data of DataHtml">
+        <input [type]="[data.type]" [formControlName]=data.formControlName *ngIf="data.typeHtml === 0" required>
+        <span></span>
+        <label>{{data.label}}</label>
+      </div>
+
+      <div class="pass">Forgot Password?</div>
+      <button type="submit">Login</button>
+      <div class="signup_link">
+        Not a member? <a routerLink="singup">Signup</a>
+      </div>
+    </form>
+  </div>
+</div>
